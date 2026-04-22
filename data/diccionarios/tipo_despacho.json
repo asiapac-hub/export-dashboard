@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "label": "BB O GRANEL"
+  },
+  {
+    "id": 2,
+    "label": "FCL"
+  },
+  {
+    "id": 3,
+    "label": "FCL-BB O GRANEL"
+  },
+  {
+    "id": 4,
+    "label": "LCL"
+  },
+  {
+    "id": 5,
+    "label": "ZZ VACIOS"
+  }
+]

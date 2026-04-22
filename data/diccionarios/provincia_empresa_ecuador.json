@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "label": "(en blanco)"
+  },
+  {
+    "id": 2,
+    "label": "AZUAY"
+  },
+  {
+    "id": 3,
+    "label": "BOLIVAR"
+  },
+  {
+    "id": 4,
+    "label": "CARCHI"
+  },
+  {
+    "id": 5,
+    "label": "CAÑAR"
+  },
+  {
+    "id": 6,
+    "label": "CHIMBORAZO"
+  },
+  {
+    "id": 7,
+    "label": "COTOPAXI"
+  },
+  {
+    "id": 8,
+    "label": "EL ORO"
+  },
+  {
+    "id": 9,
+    "label": "ESMERALDAS"
+  },
+  {
+    "id": 10,
+    "label": "GALAPAGOS"
+  },
+  {
+    "id": 11,
+    "label": "GUAYAS"
+  },
+  {
+    "id": 12,
+    "label": "IMBABURA"
+  },
+  {
+    "id": 13,
+    "label": "LOJA"
+  },
+  {
+    "id": 14,
+    "label": "LOS RIOS"
+  },
+  {
+    "id": 15,
+    "label": "MANABI"
+  },
+  {
+    "id": 16,
+    "label": "MORONA SANTIAGO"
+  },
+  {
+    "id": 17,
+    "label": "NAPO"
+  },
+  {
+    "id": 18,
+    "label": "ORELLANA"
+  },
+  {
+    "id": 19,
+    "label": "PICHINCHA"
+  },
+  {
+    "id": 20,
+    "label": "SANTA ELENA"
+  },
+  {
+    "id": 21,
+    "label": "SANTO DOMINGO DE LOS TSACHILAS"
+  },
+  {
+    "id": 22,
+    "label": "SUCUMBIOS"
+  },
+  {
+    "id": 23,
+    "label": "TUNGURAHUA"
+  },
+  {
+    "id": 24,
+    "label": "ZAMORA CHINCHIPE"
+  }
+]

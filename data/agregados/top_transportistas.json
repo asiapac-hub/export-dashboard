@@ -1,0 +1,82 @@
+[
+  {
+    "empresa_transporte": "MEDITERRANEAN SHIPPING CO.",
+    "teus_fcl": 88650.0
+  },
+  {
+    "empresa_transporte": "MAERSK LINE",
+    "teus_fcl": 56865.0
+  },
+  {
+    "empresa_transporte": "CIA.GENERALE MARITIME",
+    "teus_fcl": 47107.0
+  },
+  {
+    "empresa_transporte": "HAPAG LLOYD",
+    "teus_fcl": 36842.0
+  },
+  {
+    "empresa_transporte": "WAN HAI LINES LTDA.",
+    "teus_fcl": 20627.0
+  },
+  {
+    "empresa_transporte": "COSCO INTERNATIONAL",
+    "teus_fcl": 18536.0
+  },
+  {
+    "empresa_transporte": "OCEAN NETWORK EXPRESS",
+    "teus_fcl": 17707.0
+  },
+  {
+    "empresa_transporte": "SEABOARD MARINE",
+    "teus_fcl": 17032.0
+  },
+  {
+    "empresa_transporte": "DOLE OCEAN CARGO EXPRESS",
+    "teus_fcl": 16774.0
+  },
+  {
+    "empresa_transporte": "PACIFIC INTERNATIONAL LINE",
+    "teus_fcl": 13339.0
+  },
+  {
+    "empresa_transporte": "COOL CARRIERS",
+    "teus_fcl": 10592.0
+  },
+  {
+    "empresa_transporte": "GREAT WHITE FLEET",
+    "teus_fcl": 9396.0
+  },
+  {
+    "empresa_transporte": "EVERGREEN MARINE CORPORATION",
+    "teus_fcl": 8504.0
+  },
+  {
+    "empresa_transporte": "ZIM INTEGRATED SHIPPING SERVICES LTD",
+    "teus_fcl": 6126.0
+  },
+  {
+    "empresa_transporte": "ORIENT OVERSEAS CONTAINER LINE LTD.",
+    "teus_fcl": 3153.0
+  },
+  {
+    "empresa_transporte": "NETWORK SHIPPING LTD",
+    "teus_fcl": 2228.0
+  },
+  {
+    "empresa_transporte": "HYUNDAI MERCHANT MARINE",
+    "teus_fcl": 1409.0
+  },
+  {
+    "empresa_transporte": "COMPAGNIE MARITIME MARFRET",
+    "teus_fcl": 1192.0
+  },
+  {
+    "empresa_transporte": "SEATRADE GROUP N.V",
+    "teus_fcl": 949.0
+  },
+  {
+    "empresa_transporte": "YANG MING MARINE TRANSPORT",
+    "teus_fcl": 870.0
+  }
+]

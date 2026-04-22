@@ -1,0 +1,718 @@
+[
+  {
+    "id": 1,
+    "label": "ABACA"
+  },
+  {
+    "id": 2,
+    "label": "ACEITE"
+  },
+  {
+    "id": 3,
+    "label": "ACEITE DE COCINA"
+  },
+  {
+    "id": 4,
+    "label": "ACEITE DE PALMA"
+  },
+  {
+    "id": 5,
+    "label": "ACEITE DE PESCADO"
+  },
+  {
+    "id": 6,
+    "label": "ACUMULADORES ELECTRICOS"
+  },
+  {
+    "id": 7,
+    "label": "ADHESIVOS"
+  },
+  {
+    "id": 8,
+    "label": "ADITIVOS"
+  },
+  {
+    "id": 9,
+    "label": "AGUA MINERAL"
+  },
+  {
+    "id": 10,
+    "label": "AGUACATE"
+  },
+  {
+    "id": 11,
+    "label": "ALAMBRE"
+  },
+  {
+    "id": 12,
+    "label": "ALIMENTOS"
+  },
+  {
+    "id": 13,
+    "label": "ALIMENTOS CONGELADOS"
+  },
+  {
+    "id": 14,
+    "label": "ALIMENTOS DE MASCOTAS"
+  },
+  {
+    "id": 15,
+    "label": "ALIMENTOS FRESCOS"
+  },
+  {
+    "id": 16,
+    "label": "ANIMELAS DE TAGUA"
+  },
+  {
+    "id": 17,
+    "label": "ARROZ"
+  },
+  {
+    "id": 18,
+    "label": "ARTESANIAS"
+  },
+  {
+    "id": 19,
+    "label": "ARTICULOS DE BAZAR"
+  },
+  {
+    "id": 20,
+    "label": "ARTICULOS DE COCINA"
+  },
+  {
+    "id": 21,
+    "label": "ARTICULOS DE LIMPIEZA"
+  },
+  {
+    "id": 22,
+    "label": "ARTICULOS DE MASCOTAS"
+  },
+  {
+    "id": 23,
+    "label": "ARTICULOS DE METAL"
+  },
+  {
+    "id": 24,
+    "label": "ARTICULOS DE PLASTICO"
+  },
+  {
+    "id": 25,
+    "label": "ATUN EN CONSERVA"
+  },
+  {
+    "id": 26,
+    "label": "AZUCAR"
+  },
+  {
+    "id": 27,
+    "label": "BALANCEADO"
+  },
+  {
+    "id": 28,
+    "label": "BANANO"
+  },
+  {
+    "id": 29,
+    "label": "BARCO"
+  },
+  {
+    "id": 30,
+    "label": "BARNIZ"
+  },
+  {
+    "id": 31,
+    "label": "BATERIAS"
+  },
+  {
+    "id": 32,
+    "label": "BEBIDAS"
+  },
+  {
+    "id": 33,
+    "label": "BLOQUES"
+  },
+  {
+    "id": 34,
+    "label": "BROCOLI"
+  },
+  {
+    "id": 35,
+    "label": "CACAO"
+  },
+  {
+    "id": 36,
+    "label": "CAFE"
+  },
+  {
+    "id": 37,
+    "label": "CAJAS"
+  },
+  {
+    "id": 38,
+    "label": "CAJAS FUERTES"
+  },
+  {
+    "id": 39,
+    "label": "CAL"
+  },
+  {
+    "id": 40,
+    "label": "CALZADO"
+  },
+  {
+    "id": 41,
+    "label": "CAMARON CONGELADO"
+  },
+  {
+    "id": 42,
+    "label": "CAMARONES CONGELADOS"
+  },
+  {
+    "id": 43,
+    "label": "CARTON"
+  },
+  {
+    "id": 44,
+    "label": "CARTONES"
+  },
+  {
+    "id": 45,
+    "label": "CAUCHO"
+  },
+  {
+    "id": 46,
+    "label": "CENIZA DE HUESO"
+  },
+  {
+    "id": 47,
+    "label": "CERAMICA"
+  },
+  {
+    "id": 48,
+    "label": "CEREALES"
+  },
+  {
+    "id": 49,
+    "label": "CHATARRA"
+  },
+  {
+    "id": 50,
+    "label": "CHIFLES"
+  },
+  {
+    "id": 51,
+    "label": "CHIFLES CONGELADOS"
+  },
+  {
+    "id": 52,
+    "label": "CHOCOLATE"
+  },
+  {
+    "id": 53,
+    "label": "CILINDROS"
+  },
+  {
+    "id": 54,
+    "label": "CLINKER"
+  },
+  {
+    "id": 55,
+    "label": "COLCHONES"
+  },
+  {
+    "id": 56,
+    "label": "COLIFLOR"
+  },
+  {
+    "id": 57,
+    "label": "CONCENTRADO DE FRUTA"
+  },
+  {
+    "id": 58,
+    "label": "CONCENTRADO DE MINERIA"
+  },
+  {
+    "id": 59,
+    "label": "CONDUCTORES ELECTRICOS"
+  },
+  {
+    "id": 60,
+    "label": "CONFITES"
+  },
+  {
+    "id": 61,
+    "label": "CONTENEDORES VACIOS"
+  },
+  {
+    "id": 62,
+    "label": "CUADERNOS"
+  },
+  {
+    "id": 63,
+    "label": "CUERO"
+  },
+  {
+    "id": 64,
+    "label": "DERIVADOS DE PETROLEO"
+  },
+  {
+    "id": 65,
+    "label": "DETERGENTE"
+  },
+  {
+    "id": 66,
+    "label": "DULCES"
+  },
+  {
+    "id": 67,
+    "label": "EDDOE"
+  },
+  {
+    "id": 68,
+    "label": "EFECTOS PERSONALES"
+  },
+  {
+    "id": 69,
+    "label": "ELECTRODOMESTICOS"
+  },
+  {
+    "id": 70,
+    "label": "ENKALEN"
+  },
+  {
+    "id": 71,
+    "label": "ENVASES"
+  },
+  {
+    "id": 72,
+    "label": "EQUIPO MEDICO"
+  },
+  {
+    "id": 73,
+    "label": "EQUIPO PETROLERO"
+  },
+  {
+    "id": 74,
+    "label": "EQUIPOS"
+  },
+  {
+    "id": 75,
+    "label": "ESPARRAGOS"
+  },
+  {
+    "id": 76,
+    "label": "ESPECIAS"
+  },
+  {
+    "id": 77,
+    "label": "ESPINACA"
+  },
+  {
+    "id": 78,
+    "label": "ESPIRULINA"
+  },
+  {
+    "id": 79,
+    "label": "ESTRUCTURAS DE METAL"
+  },
+  {
+    "id": 80,
+    "label": "FERTILIZANTES"
+  },
+  {
+    "id": 81,
+    "label": "FIBRA OPTICA"
+  },
+  {
+    "id": 82,
+    "label": "FLORES FRESCAS"
+  },
+  {
+    "id": 83,
+    "label": "FLORES PRESERVADAS"
+  },
+  {
+    "id": 84,
+    "label": "FOSFOROS"
+  },
+  {
+    "id": 85,
+    "label": "FRUTAS FRESCAS"
+  },
+  {
+    "id": 86,
+    "label": "FRUTAS FRESCAS MANGO"
+  },
+  {
+    "id": 87,
+    "label": "FRUTAS FRESCAS PITAHAYA"
+  },
+  {
+    "id": 88,
+    "label": "FRUTAS FRESCAS PIÑAS"
+  },
+  {
+    "id": 89,
+    "label": "GALLETAS"
+  },
+  {
+    "id": 90,
+    "label": "HARINA DE BANANO"
+  },
+  {
+    "id": 91,
+    "label": "HARINA DE CAMARON"
+  },
+  {
+    "id": 92,
+    "label": "HARINA DE HUESO"
+  },
+  {
+    "id": 93,
+    "label": "HELADOS"
+  },
+  {
+    "id": 94,
+    "label": "HORNOS"
+  },
+  {
+    "id": 95,
+    "label": "INFUSIONES"
+  },
+  {
+    "id": 96,
+    "label": "ISOTANQUES"
+  },
+  {
+    "id": 97,
+    "label": "JABON"
+  },
+  {
+    "id": 98,
+    "label": "LANGOSTINO CONGELADO"
+  },
+  {
+    "id": 99,
+    "label": "LAVAVAJILLAS"
+  },
+  {
+    "id": 100,
+    "label": "LIBROS"
+  },
+  {
+    "id": 101,
+    "label": "LICOR"
+  },
+  {
+    "id": 102,
+    "label": "LICOR DE CACAO"
+  },
+  {
+    "id": 103,
+    "label": "LUBRICANTES"
+  },
+  {
+    "id": 104,
+    "label": "LUCES"
+  },
+  {
+    "id": 105,
+    "label": "MACETAS"
+  },
+  {
+    "id": 106,
+    "label": "MADERA"
+  },
+  {
+    "id": 107,
+    "label": "MADERA AGLOMERADA"
+  },
+  {
+    "id": 108,
+    "label": "MADERA DE BALSA"
+  },
+  {
+    "id": 109,
+    "label": "MADERA DE CIPRES"
+  },
+  {
+    "id": 110,
+    "label": "MADERA DE GMELINA"
+  },
+  {
+    "id": 111,
+    "label": "MADERA DE SAMAN"
+  },
+  {
+    "id": 112,
+    "label": "MADERA DE TECA"
+  },
+  {
+    "id": 113,
+    "label": "MALANGA"
+  },
+  {
+    "id": 114,
+    "label": "MAQUINARIA"
+  },
+  {
+    "id": 115,
+    "label": "MASCARILLAS"
+  },
+  {
+    "id": 116,
+    "label": "MEDIAS"
+  },
+  {
+    "id": 117,
+    "label": "MEDICAMENTOS"
+  },
+  {
+    "id": 118,
+    "label": "METALES"
+  },
+  {
+    "id": 119,
+    "label": "MUEBLES"
+  },
+  {
+    "id": 120,
+    "label": "MUESTRAS"
+  },
+  {
+    "id": 121,
+    "label": "NEUMATICOS"
+  },
+  {
+    "id": 122,
+    "label": "PALITOS DE MADERA"
+  },
+  {
+    "id": 123,
+    "label": "PALMITO EN CONSERVA"
+  },
+  {
+    "id": 124,
+    "label": "PANELA"
+  },
+  {
+    "id": 125,
+    "label": "PAPEL"
+  },
+  {
+    "id": 126,
+    "label": "PARTES Y PIEZAS"
+  },
+  {
+    "id": 127,
+    "label": "PASTA DE CACAO"
+  },
+  {
+    "id": 128,
+    "label": "PATACON CONGELADO"
+  },
+  {
+    "id": 129,
+    "label": "PEGAMENTO"
+  },
+  {
+    "id": 130,
+    "label": "PERFILES DE ALUMINIO"
+  },
+  {
+    "id": 131,
+    "label": "PESCADO CONGELADO"
+  },
+  {
+    "id": 132,
+    "label": "PIMIENTA"
+  },
+  {
+    "id": 133,
+    "label": "PINTURA"
+  },
+  {
+    "id": 134,
+    "label": "PLANTAS"
+  },
+  {
+    "id": 135,
+    "label": "PLATANO"
+  },
+  {
+    "id": 136,
+    "label": "PLATANO MADURO CONGELADO"
+  },
+  {
+    "id": 137,
+    "label": "POSTES"
+  },
+  {
+    "id": 138,
+    "label": "PREFORMAS"
+  },
+  {
+    "id": 139,
+    "label": "PRODUCTOS AGROQUIMICOS"
+  },
+  {
+    "id": 140,
+    "label": "PRODUCTOS DE BELLEZA Y CUIDADO PERSONAL"
+  },
+  {
+    "id": 141,
+    "label": "PRODUCTOS DE USO VETERINARIO"
+  },
+  {
+    "id": 142,
+    "label": "PRODUCTOS DESECHABLES"
+  },
+  {
+    "id": 143,
+    "label": "PRODUCTOS FARMACEUTICOS"
+  },
+  {
+    "id": 144,
+    "label": "PRODUCTOS QUIMICOS"
+  },
+  {
+    "id": 145,
+    "label": "PUERTAS DE MADERA"
+  },
+  {
+    "id": 146,
+    "label": "PULPA DE FRUTA"
+  },
+  {
+    "id": 147,
+    "label": "PURE DE FRUTA"
+  },
+  {
+    "id": 148,
+    "label": "QUINUA"
+  },
+  {
+    "id": 149,
+    "label": "RECUBRIMIENTO PARA CONCRETO"
+  },
+  {
+    "id": 150,
+    "label": "RESINA"
+  },
+  {
+    "id": 151,
+    "label": "ROMANESCO"
+  },
+  {
+    "id": 152,
+    "label": "SACOS"
+  },
+  {
+    "id": 153,
+    "label": "SALMUERA"
+  },
+  {
+    "id": 154,
+    "label": "SALSAS"
+  },
+  {
+    "id": 155,
+    "label": "SANITARIOS"
+  },
+  {
+    "id": 156,
+    "label": "SARDINA EN CONSERVA"
+  },
+  {
+    "id": 157,
+    "label": "SEMILLAS"
+  },
+  {
+    "id": 158,
+    "label": "SOMBREROS"
+  },
+  {
+    "id": 159,
+    "label": "SORBETES"
+  },
+  {
+    "id": 160,
+    "label": "SUPLEMENTOS Y VITAMINAS"
+  },
+  {
+    "id": 161,
+    "label": "TABACO"
+  },
+  {
+    "id": 162,
+    "label": "TABACO EN RAMA"
+  },
+  {
+    "id": 163,
+    "label": "TANQUES"
+  },
+  {
+    "id": 164,
+    "label": "TARO"
+  },
+  {
+    "id": 165,
+    "label": "TEJAS"
+  },
+  {
+    "id": 166,
+    "label": "TEXTILES"
+  },
+  {
+    "id": 167,
+    "label": "TRANSFORMADORES"
+  },
+  {
+    "id": 168,
+    "label": "TUBERIA"
+  },
+  {
+    "id": 169,
+    "label": "TUBERIA DE ALUMINIO"
+  },
+  {
+    "id": 170,
+    "label": "TUBERIA DE METAL"
+  },
+  {
+    "id": 171,
+    "label": "TUBOS DE METAL"
+  },
+  {
+    "id": 172,
+    "label": "UTENSILIOS DE COCINA"
+  },
+  {
+    "id": 173,
+    "label": "VEHICULO"
+  },
+  {
+    "id": 174,
+    "label": "VIDRIO TEMPLADO"
+  },
+  {
+    "id": 175,
+    "label": "VIROLA DE MADERA"
+  },
+  {
+    "id": 176,
+    "label": "YUCA"
+  },
+  {
+    "id": 177,
+    "label": "ZZ CONTENEDORES VACIOS"
+  },
+  {
+    "id": 178,
+    "label": "ZZ DE USO NAVIERO"
+  },
+  {
+    "id": 179,
+    "label": "ZZ OTROS PRODUCTOS"
+  }
+]

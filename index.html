@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Exportaciones Ecuador</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div>
+        <p class="eyebrow">Dashboard interno</p>
+        <h1>Exportaciones Ecuador</h1>
+        <p class="muted">Q1 2026, con filtros dinámicos y gráficos listos para GitHub Pages.</p>
+      </div>
+
+      <section class="filter-card">
+        <div class="section-title-row">
+          <h2>Filtros</h2>
+          <button id="resetFiltersBtn" class="ghost-btn" type="button">Limpiar</button>
+        </div>
+
+        <label> Año
+          <select id="filterAnio"></select>
+        </label>
+
+        <label> Mes
+          <select id="filterMes"></select>
+        </label>
+
+        <label> País destino
+          <select id="filterPais"></select>
+        </label>
+
+        <label> Commodity
+          <select id="filterCommodity"></select>
+        </label>
+
+        <label> Puerto destino
+          <select id="filterPuertoDestino"></select>
+        </label>
+
+        <label> Puerto Ecuador
+          <select id="filterPuertoEcuador"></select>
+        </label>
+
+        <label> Empresa Ecuador
+          <select id="filterEmpresaEcuador"></select>
+        </label>
+
+        <label> Forwarder origen
+          <select id="filterForwarderOrigen"></select>
+        </label>
+      </section>
+
+      <section class="filter-card compact">
+        <h2>Estado</h2>
+        <p id="loadingStatus" class="status">Cargando datos...</p>
+        <p class="mini">El detalle se calcula del CSV optimizado, no de Excel.</p>
+      </section>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Vista general</p>
+          <h2>Indicadores y tendencias</h2>
+        </div>
+        <div class="pill" id="activeFiltersLabel">Sin filtros</div>
+      </header>
+
+      <section class="kpi-grid">
+        <article class="kpi-card">
+          <span class="kpi-label">TEUs FCL</span>
+          <strong id="kpiTeus">-</strong>
+        </article>
+        <article class="kpi-card">
+          <span class="kpi-label">Contenedores</span>
+          <strong id="kpiCont">-</strong>
+        </article>
+        <article class="kpi-card">
+          <span class="kpi-label">20'</span>
+          <strong id="kpi20">-</strong>
+        </article>
+        <article class="kpi-card">
+          <span class="kpi-label">40'</span>
+          <strong id="kpi40">-</strong>
+        </article>
+        <article class="kpi-card">
+          <span class="kpi-label">Empresas Ecuador</span>
+          <strong id="kpiEmpresas">-</strong>
+        </article>
+        <article class="kpi-card">
+          <span class="kpi-label">Países destino</span>
+          <strong id="kpiPaises">-</strong>
+        </article>
+      </section>
+
+      <section class="chart-grid two-columns">
+        <article class="panel">
+          <div class="panel-head">
+            <h3>Evolución mensual</h3>
+            <span class="panel-note">TEUs FCL</span>
+          </div>
+          <canvas id="chartSeries"></canvas>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <h3>Top países destino</h3>
+            <span class="panel-note">Top 10</span>
+          </div>
+          <canvas id="chartPaises"></canvas>
+        </article>
+      </section>
+
+      <section class="chart-grid two-columns">
+        <article class="panel">
+          <div class="panel-head">
+            <h3>Top commodities</h3>
+            <span class="panel-note">Top 10</span>
+          </div>
+          <canvas id="chartCommodities"></canvas>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <h3>Top puertos destino</h3>
+            <span class="panel-note">Top 10</span>
+          </div>
+          <canvas id="chartPuertos"></canvas>
+        </article>
+      </section>
+
+      <section class="chart-grid">
+        <article class="panel">
+          <div class="panel-head">
+            <h3>Top empresas Ecuador</h3>
+            <span class="panel-note">Top 15 por TEUs</span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Empresa</th>
+                  <th>TEUs</th>
+                </tr>
+              </thead>
+              <tbody id="topEmpresasBody"></tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

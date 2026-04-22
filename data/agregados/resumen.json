@@ -1,0 +1,17 @@
+{
+  "rows": 84361,
+  "periodos": [
+    "0-00",
+    "2026-01",
+    "2026-02",
+    "2026-03"
+  ],
+  "total_teus_fcl": 378566.0,
+  "total_cont": 200520.0,
+  "total_20": 20402.0,
+  "total_40": 180118.0,
+  "empresas_ecuador_unicas": 2265,
+  "empresas_exterior_unicas": 4839,
+  "paises_destino_unicos": 103,
+  "commodities_unicos": 179
+}

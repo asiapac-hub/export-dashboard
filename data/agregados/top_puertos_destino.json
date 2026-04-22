@@ -1,0 +1,82 @@
+[
+  {
+    "puerto_destino": "SAINT PETERSBURG (EX LENINGRAD)",
+    "teus_fcl": 25881.0
+  },
+  {
+    "puerto_destino": "NINGBO",
+    "teus_fcl": 25677.0
+  },
+  {
+    "puerto_destino": "SHEKOU",
+    "teus_fcl": 25633.0
+  },
+  {
+    "puerto_destino": "SHANGHAI",
+    "teus_fcl": 16237.0
+  },
+  {
+    "puerto_destino": "SAN ANTONIO",
+    "teus_fcl": 15323.0
+  },
+  {
+    "puerto_destino": "SAN DIEGO",
+    "teus_fcl": 14222.0
+  },
+  {
+    "puerto_destino": "ROTTERDAM",
+    "teus_fcl": 12856.0
+  },
+  {
+    "puerto_destino": "TIANJINXINGANG",
+    "teus_fcl": 11238.0
+  },
+  {
+    "puerto_destino": "TAIPEI",
+    "teus_fcl": 8194.0
+  },
+  {
+    "puerto_destino": "MALTA (VALETTA)",
+    "teus_fcl": 7724.0
+  },
+  {
+    "puerto_destino": "HAMBURG",
+    "teus_fcl": 7104.0
+  },
+  {
+    "puerto_destino": "ANTWERPEN",
+    "teus_fcl": 7008.0
+  },
+  {
+    "puerto_destino": "MIAMI",
+    "teus_fcl": 6995.0
+  },
+  {
+    "puerto_destino": "BALBOA",
+    "teus_fcl": 6684.0
+  },
+  {
+    "puerto_destino": "JEDDAH",
+    "teus_fcl": 6318.0
+  },
+  {
+    "puerto_destino": "PHILADELPHIA",
+    "teus_fcl": 6192.0
+  },
+  {
+    "puerto_destino": "YOKOHAMA, KANAGAWA",
+    "teus_fcl": 6111.0
+  },
+  {
+    "puerto_destino": "DALIAN",
+    "teus_fcl": 6006.0
+  },
+  {
+    "puerto_destino": "MERSIN, ICEL",
+    "teus_fcl": 5771.0
+  },
+  {
+    "puerto_destino": "BUSAN (EX PUSAN)",
+    "teus_fcl": 5541.0
+  }
+]

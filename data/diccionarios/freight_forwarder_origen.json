@@ -1,0 +1,538 @@
+[
+  {
+    "id": 1,
+    "label": "ACCESS ECUADOR CONSOLIDADORA DE CARGA ACCESSCARGO CIA. LTDA"
+  },
+  {
+    "id": 2,
+    "label": "ACGROUP WORLDWIDE ECUADOR S.A."
+  },
+  {
+    "id": 3,
+    "label": "ACL-ALLCARGO LOGISTIC S.A."
+  },
+  {
+    "id": 4,
+    "label": "ACROSS THE BOARD ATBSUPPLYCHAIN S.A."
+  },
+  {
+    "id": 5,
+    "label": "AGENCIA DE CARGA LOGÍSTICA NAVIERA Y AEREA AGENNAVIO S.A."
+  },
+  {
+    "id": 6,
+    "label": "AHARTRODT LOGISTICS ECUADOR S.A."
+  },
+  {
+    "id": 7,
+    "label": "AIR MAINLAND & SEA CARGO SERVICE S.A. AMSECARGO"
+  },
+  {
+    "id": 8,
+    "label": "AKTION PROJECTS & LOGISTIC S.A. AKPROLOG"
+  },
+  {
+    "id": 9,
+    "label": "ALIANZA LOGISTIKA TDGE S.A."
+  },
+  {
+    "id": 10,
+    "label": "ALLTRANSCARGOCORP S.A."
+  },
+  {
+    "id": 11,
+    "label": "ANDINACOMEX SERVICIOS EN COMERCIO EXTERIOR S.A."
+  },
+  {
+    "id": 12,
+    "label": "ANICAM CARGO ECUADOR S.A. ANICAMCARG"
+  },
+  {
+    "id": 13,
+    "label": "ARGOGROUP S.A."
+  },
+  {
+    "id": 14,
+    "label": "ASIA ROUND THE WORLD S.A. ASROWD"
+  },
+  {
+    "id": 15,
+    "label": "ASIA SHIPPING ECUADOR S. A. ASE"
+  },
+  {
+    "id": 16,
+    "label": "ATLAS-LOGISTICS S A"
+  },
+  {
+    "id": 17,
+    "label": "BLUE PACIFIC CORPORATE BLUEPACOR S.A."
+  },
+  {
+    "id": 18,
+    "label": "BRAGALLOGISTICS CIA.LTDA."
+  },
+  {
+    "id": 19,
+    "label": "BROOM-ECUADOR S.A."
+  },
+  {
+    "id": 20,
+    "label": "CARGOCORP ECUADOR S.A."
+  },
+  {
+    "id": 21,
+    "label": "CARGOLOGIC, CARGA LOGISTICA S.A."
+  },
+  {
+    "id": 22,
+    "label": "CARGOMARLOGISTICS ECUADOR S.A."
+  },
+  {
+    "id": 23,
+    "label": "CEVA FREIGHT MANAGEMENT DE ECUADOR CEVALOGISTICS-ECUADOR CIA.LTDA."
+  },
+  {
+    "id": 24,
+    "label": "COLUMTRAD CIA. LTDA."
+  },
+  {
+    "id": 25,
+    "label": "COMERCIO EXTERIOR Y SOLUCIONES LOGISTICAS COMEXTERSOL ECUADOR CIA. LTDA."
+  },
+  {
+    "id": 26,
+    "label": "COMPAÑIA DE DESPACHOS Y ASESORIAS ADUANERAS CAL-VIMA C.LTDA."
+  },
+  {
+    "id": 27,
+    "label": "CONSOLIDACION DE CARGA LATINOAMERICANA CDC-LATAM S.A."
+  },
+  {
+    "id": 28,
+    "label": "CONSOLIDACION MARITIMA Y AEREA NAVICARGOECU S.A."
+  },
+  {
+    "id": 29,
+    "label": "CONSOLIDADORA CALDERON S.A. CONSULCAL"
+  },
+  {
+    "id": 30,
+    "label": "CORPORACION LOGISTICA INTEGRAL S.A. CLISA - ECUADOR"
+  },
+  {
+    "id": 31,
+    "label": "CRAFT ECUADOR MULTIMODAL CRAFTECMUL S.A."
+  },
+  {
+    "id": 32,
+    "label": "CTK LOGISTIC S.A."
+  },
+  {
+    "id": 33,
+    "label": "DELTRANS S.A."
+  },
+  {
+    "id": 34,
+    "label": "DESADUANAMIENTO MERCANTIL S.A. CODEMERSA"
+  },
+  {
+    "id": 35,
+    "label": "DHL GLOBAL FORWARDING ECUADOR S.A."
+  },
+  {
+    "id": 36,
+    "label": "DOLPHIN LOGISTICS SUPPLY CHAIN MANAGEMENT (ECUADOR) S.A."
+  },
+  {
+    "id": 37,
+    "label": "DP WORLD LOGISTICS CARGO DPWLC S.A."
+  },
+  {
+    "id": 38,
+    "label": "DSV-AIR&SEA S.A"
+  },
+  {
+    "id": 39,
+    "label": "EBF CARGO CIA. LTDA."
+  },
+  {
+    "id": 40,
+    "label": "ECU - WORLDWIDE - (ECUADOR) S.A."
+  },
+  {
+    "id": 41,
+    "label": "EMBARKO-LOGISTIC SERVICES S.A."
+  },
+  {
+    "id": 42,
+    "label": "EQSHIPPING S.A."
+  },
+  {
+    "id": 43,
+    "label": "EUROPARTNERS-ECUADOR S.A."
+  },
+  {
+    "id": 44,
+    "label": "EXPRESS CARGO LINE DEL ECUADOR EXPRESSLINE S.A."
+  },
+  {
+    "id": 45,
+    "label": "FARLETZA S.A."
+  },
+  {
+    "id": 46,
+    "label": "FASTCARGOECUADOR S.A."
+  },
+  {
+    "id": 47,
+    "label": "FLOWERCARGO S.A."
+  },
+  {
+    "id": 48,
+    "label": "FORTRADERS LOGISTIC S.A."
+  },
+  {
+    "id": 49,
+    "label": "FRESH FLOWER CARGO FF CARGO S A"
+  },
+  {
+    "id": 50,
+    "label": "FRESH LOGISTICS CARGA CIA. LTDA."
+  },
+  {
+    "id": 51,
+    "label": "FRESH SOLUTIONS CARGO SERVICIOS DE LOGISTICA CIA. LTDA."
+  },
+  {
+    "id": 52,
+    "label": "FULTER LOGISTICS ECUADOR S.A."
+  },
+  {
+    "id": 53,
+    "label": "GALAXI S.A."
+  },
+  {
+    "id": 54,
+    "label": "GARINMOPOINT CIA. LTDA."
+  },
+  {
+    "id": 55,
+    "label": "GEOTRANSPORT S.A."
+  },
+  {
+    "id": 56,
+    "label": "GLOVAL-SHIPPING ECUADOR CIA.LTDA"
+  },
+  {
+    "id": 57,
+    "label": "GOLD CARGO WORLDWIDE-LOGISTICS S.A."
+  },
+  {
+    "id": 58,
+    "label": "GOLDENLOGISTICS S.A."
+  },
+  {
+    "id": 59,
+    "label": "GSLINE LOGISTIC S.A."
+  },
+  {
+    "id": 60,
+    "label": "H.A. CARGO S.A."
+  },
+  {
+    "id": 61,
+    "label": "IAN TAYLOR ECUADOR COMPAÑIA ANONIMA"
+  },
+  {
+    "id": 62,
+    "label": "IMPOEX-INTERNACIONAL CIA LTDA"
+  },
+  {
+    "id": 63,
+    "label": "INNOVOCARGO S.A.S."
+  },
+  {
+    "id": 64,
+    "label": "INTERGLOBO ECUADOR S.A."
+  },
+  {
+    "id": 65,
+    "label": "INTERMARES S.A. MARITIME SERVICES LINE"
+  },
+  {
+    "id": 66,
+    "label": "INTERMODALTRADE LOGISTICS S.A."
+  },
+  {
+    "id": 67,
+    "label": "INTERNACIONAL DE TRANSPORTE LAURAMOORE POZO TRANEXTEINT SA"
+  },
+  {
+    "id": 68,
+    "label": "INTERNATIONAL LOGISTIC CORP ILC C.A."
+  },
+  {
+    "id": 69,
+    "label": "INTERNATIONAL LOGISTICS 593-JASCARGO C. LTDA."
+  },
+  {
+    "id": 70,
+    "label": "JAP TRANSPORT LOGISTICS JAPTRA S.A."
+  },
+  {
+    "id": 71,
+    "label": "KAB LOGISTIC S.A."
+  },
+  {
+    "id": 72,
+    "label": "KRYSTAL LOGISTICS ECUADOR KRYSLOGIC C. LTDA."
+  },
+  {
+    "id": 73,
+    "label": "KUEHNE + NAGEL S.A."
+  },
+  {
+    "id": 74,
+    "label": "LATINTERNACIONAL CIA. LTDA."
+  },
+  {
+    "id": 75,
+    "label": "LDSEXPORT & IMPORT CIA.LTDA."
+  },
+  {
+    "id": 76,
+    "label": "LOGIGA-CARGO S.A"
+  },
+  {
+    "id": 77,
+    "label": "LOGISTICA MARITIMA INTEGRAL S.A MARILOGINSA"
+  },
+  {
+    "id": 78,
+    "label": "LOGISTICS UNLIMITED S.A. LOGUNSA"
+  },
+  {
+    "id": 79,
+    "label": "MAERSK LOGISTICS & SERVICES ECUADOR MAERSKLOGISTICS S.A."
+  },
+  {
+    "id": 80,
+    "label": "MAR-SHIPPING S.A."
+  },
+  {
+    "id": 81,
+    "label": "MARITIME SERVICES LINE DEL ECUADOR MSL DEL ECUADOR S.A."
+  },
+  {
+    "id": 82,
+    "label": "MASENI S.A"
+  },
+  {
+    "id": 83,
+    "label": "MASTERVIEW S.A."
+  },
+  {
+    "id": 84,
+    "label": "MATER CARGO LOGISTICS MATERCARGO S.A."
+  },
+  {
+    "id": 85,
+    "label": "MDG-CARGO LINE S.A.S."
+  },
+  {
+    "id": 86,
+    "label": "MMISHIPPING S.A.S."
+  },
+  {
+    "id": 87,
+    "label": "MODALTRADE S.A."
+  },
+  {
+    "id": 88,
+    "label": "NSS GLOBAL CARGO S.A."
+  },
+  {
+    "id": 89,
+    "label": "OCEANFREIGHT CARGO LINES S.A."
+  },
+  {
+    "id": 90,
+    "label": "ONBOARD LOGISTICS S.A.S."
+  },
+  {
+    "id": 91,
+    "label": "OPERADORA Y PROCESADORA DE PRODUCTOS MARINOS OMARSA S.A."
+  },
+  {
+    "id": 92,
+    "label": "PACIFIC OCEAN S.A PACIFOCSA"
+  },
+  {
+    "id": 93,
+    "label": "PACIFICLINK S.A."
+  },
+  {
+    "id": 94,
+    "label": "PANATLANTIC LOGISTICS S.A."
+  },
+  {
+    "id": 95,
+    "label": "PLUSCARGO-ECUADOR S. A."
+  },
+  {
+    "id": 96,
+    "label": "PORTLOGISTICS S.A."
+  },
+  {
+    "id": 97,
+    "label": "PROVEEDORA DE FLETES INTERNACIONALES Y TRANSPORTE DE CARGA-PROFITCARGO COMPANIA LIMITADA"
+  },
+  {
+    "id": 98,
+    "label": "PROVEXCAR CIA. LTDA."
+  },
+  {
+    "id": 99,
+    "label": "QUICK&SHIPPING S.A.S."
+  },
+  {
+    "id": 100,
+    "label": "RHENUS LOGISTICS ECUADOR S.A."
+  },
+  {
+    "id": 101,
+    "label": "ROLA INTERNACIONAL S.A."
+  },
+  {
+    "id": 102,
+    "label": "SACO SHIPPING S.A."
+  },
+  {
+    "id": 103,
+    "label": "SAMISA SERVICIOS AEREOS Y MARITIMOS INTERNACIONALES S.A."
+  },
+  {
+    "id": 104,
+    "label": "SCHRYVER DEL ECUADOR S.A"
+  },
+  {
+    "id": 105,
+    "label": "SERVICIO DIRECTO DE CARGA SOLUTIONCARG S.A."
+  },
+  {
+    "id": 106,
+    "label": "SERVICIOS DE CARGA INTERNACIONAL S.A. SECARINSA"
+  },
+  {
+    "id": 107,
+    "label": "SERVICIOS E INSPECCIONES MARITIMAS CARDENAS & ASOCIADOS C. LTDA."
+  },
+  {
+    "id": 108,
+    "label": "SERVICIOS INTEGRALES DE LOGÍSTICA Y COMERCIO EXTERIOR SILOGISTIKS S.A."
+  },
+  {
+    "id": 109,
+    "label": "STARCARGO CIA. LTDA"
+  },
+  {
+    "id": 110,
+    "label": "SURTAX S.A."
+  },
+  {
+    "id": 111,
+    "label": "TIBA ECUADOR-FORWARDING S.A."
+  },
+  {
+    "id": 112,
+    "label": "TOLEPU S.A."
+  },
+  {
+    "id": 113,
+    "label": "TONVILCOR FREIGHT CORPORATION TONVILCORP S.A."
+  },
+  {
+    "id": 114,
+    "label": "TRANSASIA PACIFIC S.A."
+  },
+  {
+    "id": 115,
+    "label": "TRANSDIRSERVICES TRANSPORTE DIRECTO Y SERVICIOS CIA. LTDA"
+  },
+  {
+    "id": 116,
+    "label": "TRANSOCEAN LOGISTICS CORPORATION S.A."
+  },
+  {
+    "id": 117,
+    "label": "TRANSOCEANICA LOGISTICS TCLOG S.A."
+  },
+  {
+    "id": 118,
+    "label": "TRANSPORT SOLUTIONS TSTM S.A."
+  },
+  {
+    "id": 119,
+    "label": "TRANSPORTE INTERNACIONAL CONSOLIDADO Y MARITIMO DE CARGA GONDRAND S.A."
+  },
+  {
+    "id": 120,
+    "label": "TRANSPORTE Y REPRESENTACIONES INTERNACIONALES TRADINTER S.A."
+  },
+  {
+    "id": 121,
+    "label": "TRANSPORTES Y SERVICIOS VASCONES S.A. TRANSVAS"
+  },
+  {
+    "id": 122,
+    "label": "TRANSTAINER LOGISTICS SERVICE AGENCY TRANSLOGICS S.A."
+  },
+  {
+    "id": 123,
+    "label": "ULOG ECUADOR S.A."
+  },
+  {
+    "id": 124,
+    "label": "UNILINE TRANSPORT SYSTEM C. LTDA."
+  },
+  {
+    "id": 125,
+    "label": "UNIMODAL S.A."
+  },
+  {
+    "id": 126,
+    "label": "UNIVERSALCARGO S.A."
+  },
+  {
+    "id": 127,
+    "label": "UPS SCS (ECUADOR) S.A.S."
+  },
+  {
+    "id": 128,
+    "label": "VELESASESORES COMPANIA LIMITADA"
+  },
+  {
+    "id": 129,
+    "label": "VIAL SHIPPING & REPRESENTACIONES C. A."
+  },
+  {
+    "id": 130,
+    "label": "VYO CARGO S.A."
+  },
+  {
+    "id": 131,
+    "label": "WORLD TRANSPORT WTRAN S.A."
+  },
+  {
+    "id": 132,
+    "label": "WORLDWIDE CARGO LOGISTICS CIA. LTDA"
+  },
+  {
+    "id": 133,
+    "label": "YBL FASTWAY CARGO CIA. LTDA."
+  },
+  {
+    "id": 134,
+    "label": "ZZ OTROS LIBERADORES DIRECTOS"
+  }
+]

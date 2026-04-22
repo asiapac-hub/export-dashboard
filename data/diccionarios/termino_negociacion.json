@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "label": "COLLECT"
+  },
+  {
+    "id": 2,
+    "label": "MIXED"
+  },
+  {
+    "id": 3,
+    "label": "NOT SPECIFIED"
+  },
+  {
+    "id": 4,
+    "label": "PAYABLE ELSEWHERE"
+  },
+  {
+    "id": 5,
+    "label": "PREPAID (BY SELLER)"
+  },
+  {
+    "id": 6,
+    "label": "PREPAID BUT CHARGED TO CUSTOMER"
+  },
+  {
+    "id": 7,
+    "label": "SERVICE FREIGHT, NO CHARGE"
+  },
+  {
+    "id": 8,
+    "label": "THIRD PARTY PAY"
+  },
+  {
+    "id": 9,
+    "label": "ZZ OTROS TERMINOS"
+  }
+]

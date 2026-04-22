@@ -1,0 +1,82 @@
+[
+  {
+    "freight_forwarder_destino": "ZZ OTROS LIBERADORES DIRECTOS",
+    "teus_fcl": 349479.0
+  },
+  {
+    "freight_forwarder_destino": "ALONSO FORWARDING (SHANGHAI) COMPANY LIMITED SHENZHEN BRANCH",
+    "teus_fcl": 2332.0
+  },
+  {
+    "freight_forwarder_destino": "KUEHNE + NAGEL SP.Z O.O",
+    "teus_fcl": 1346.0
+  },
+  {
+    "freight_forwarder_destino": "ALONSO FORWARDING (SHANGHAI)",
+    "teus_fcl": 1106.0
+  },
+  {
+    "freight_forwarder_destino": "KUEHNE + NAGEL N.V.",
+    "teus_fcl": 992.0
+  },
+  {
+    "freight_forwarder_destino": "SCL CARGO",
+    "teus_fcl": 910.0
+  },
+  {
+    "freight_forwarder_destino": "KUEHNE + NAGEL (AG & CO.) KG",
+    "teus_fcl": 885.0
+  },
+  {
+    "freight_forwarder_destino": "ALONSO FORWARDING (SHANGHAI) COMPANY LIMITED QINGDAO BRANCH",
+    "teus_fcl": 812.0
+  },
+  {
+    "freight_forwarder_destino": "EASYFRESH CHILE SPA",
+    "teus_fcl": 800.0
+  },
+  {
+    "freight_forwarder_destino": "DSV AIR & SEA CO.,LTD TIANJIN BRANCH",
+    "teus_fcl": 792.0
+  },
+  {
+    "freight_forwarder_destino": "ZIM LOGISTICS USA LLC",
+    "teus_fcl": 703.0
+  },
+  {
+    "freight_forwarder_destino": "KUEHNE+NAGEL NAKLIYAT LTD STI",
+    "teus_fcl": 466.0
+  },
+  {
+    "freight_forwarder_destino": "SAMSKIP LOGISTICS (QINGDAO) CO., LTD.",
+    "teus_fcl": 442.0
+  },
+  {
+    "freight_forwarder_destino": "RIWI LOGISTICS CO.,LTD.",
+    "teus_fcl": 428.0
+  },
+  {
+    "freight_forwarder_destino": "LESCHACO (CHINA) LIMITED TIANJIN BRANCH",
+    "teus_fcl": 346.0
+  },
+  {
+    "freight_forwarder_destino": "KUEHNE + NAGEL N V",
+    "teus_fcl": 340.0
+  },
+  {
+    "freight_forwarder_destino": "AIR SEA WORLDWIDE(CHINA) LTD.",
+    "teus_fcl": 320.0
+  },
+  {
+    "freight_forwarder_destino": "CARGO COMPASS (SHANGHAI) COMPANY LIMITED",
+    "teus_fcl": 302.0
+  },
+  {
+    "freight_forwarder_destino": "KUEHNE + NAGEL (AG CO ) KG",
+    "teus_fcl": 276.0
+  },
+  {
+    "freight_forwarder_destino": "TIBA CARGO PERU SAC",
+    "teus_fcl": 258.0
+  }
+]
