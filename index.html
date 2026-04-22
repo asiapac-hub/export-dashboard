@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard Exportaciones Ecuador</title>
+  <title>Asiapac | Dashboard Exportaciones Ecuador</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,11 +14,19 @@
 <body>
   <div class="app-shell">
     <aside class="sidebar">
-      <div>
-        <p class="eyebrow">Dashboard interno</p>
-        <h1>Exportaciones Ecuador</h1>
-        <p class="muted">Q1 2026, con filtros dinámicos y gráficos listos para GitHub Pages.</p>
+      <div class="brand-block">
+        <img src="assets/asiapac-logo.png" alt="Asiapac" class="brand-logo" />
+        <div>
+          <p class="eyebrow">Dashboard interno</p>
+          <h1>Exportaciones Ecuador</h1>
+          <p class="muted">Q1 2026, con filtros dinámicos y gráficos listos para GitHub Pages.</p>
+        </div>
       </div>
+
+      <section class="brand-highlight">
+        <span class="brand-badge">Eficiencia en movimiento</span>
+        <p>Vista de inteligencia comercial para analizar exportadores, destinos, commodities y desempeño de rutas.</p>
+      </section>
 
       <section class="filter-card">
         <div class="section-title-row">
@@ -69,14 +77,14 @@
     <main class="main-content">
       <header class="topbar">
         <div>
-          <p class="eyebrow">Vista general</p>
+          <p class="eyebrow page-eyebrow">Vista general</p>
           <h2>Indicadores y tendencias</h2>
         </div>
         <div class="pill" id="activeFiltersLabel">Sin filtros</div>
       </header>
 
       <section class="kpi-grid">
-        <article class="kpi-card">
+        <article class="kpi-card accent-card">
           <span class="kpi-label">TEUs FCL</span>
           <strong id="kpiTeus">-</strong>
         </article>

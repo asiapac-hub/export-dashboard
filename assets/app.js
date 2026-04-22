@@ -228,8 +228,8 @@ function createOrUpdateChart(chartKey, ctxId, type, labels, data, label) {
       datasets: [{
         label,
         data,
-        borderColor: '#ff4a1c',
-        backgroundColor: type === 'line' ? 'rgba(255, 74, 28, 0.15)' : 'rgba(255, 74, 28, 0.75)',
+        borderColor: '#FC4A1D',
+        backgroundColor: type === 'line' ? 'rgba(252, 74, 29, 0.14)' : 'rgba(57, 62, 77, 0.84)',
         tension: 0.25,
         fill: type === 'line',
         borderRadius: 8,
@@ -240,9 +240,24 @@ function createOrUpdateChart(chartKey, ctxId, type, labels, data, label) {
       maintainAspectRatio: false,
       plugins: {
         legend: { display: false },
+        tooltip: {
+          backgroundColor: '#393E4D',
+          titleColor: '#ffffff',
+          bodyColor: '#ffffff',
+          borderColor: 'rgba(252,74,29,.35)',
+          borderWidth: 1,
+        },
       },
       scales: {
-        y: { beginAtZero: true, ticks: { callback: value => formatNumber(value) } },
+        x: {
+          ticks: { color: '#585D6C' },
+          grid: { display: false }
+        },
+        y: {
+          beginAtZero: true,
+          ticks: { color: '#585D6C', callback: value => formatNumber(value) },
+          grid: { color: 'rgba(88,93,108,.14)' }
+        },
       }
     }
   });
