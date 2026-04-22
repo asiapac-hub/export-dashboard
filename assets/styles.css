@@ -195,7 +195,7 @@ body { min-height: 100vh; }
 
 .kpi-grid {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 16px;
   margin-bottom: 18px;
 }
@@ -307,9 +307,8 @@ tbody tr:hover { background: var(--surface-2); }
 tr:last-child td { border-bottom: none; }
 
 @media (max-width: 1200px) {
-  .kpi-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
+.kpi-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 @media (max-width: 980px) {
