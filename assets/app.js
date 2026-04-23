@@ -14,15 +14,15 @@ const MONTHS_ES = {
 };
 
 const FIELD_CONFIG = [
-  { key: 'empresa_ecuador', label: 'EMPRESA ECUADOR', color: '#393E4D', defaultSelected: true },
-  { key: 'empresa_exterior', label: 'EMPRESA EXTERIOR', color: '#FC4A1D', defaultSelected: false },
-  { key: 'puerto_ecuador', label: 'PUERTO ECUADOR', color: '#585D6C', defaultSelected: false },
-  { key: 'puerto_destino', label: 'PUERTO DESTINO', color: '#6C7488', defaultSelected: false },
-  { key: 'pais_destino', label: 'PAÍS DESTINO', color: '#2F5D7C', defaultSelected: false },
-  { key: 'commodity', label: 'COMMODITY', color: '#8D5A2B', defaultSelected: false },
-  { key: 'empresa_transporte', label: 'EMPRESA DE TRANSPORTE', color: '#4E7B5C', defaultSelected: false },
-  { key: 'freight_forwarder_destino', label: 'FREIGHT FORWARDER DESTINO', color: '#7C4D79', defaultSelected: false },
-  { key: 'freight_forwarder_origen', label: 'FREIGHT FORWARDER ORIGEN', color: '#A0573A', defaultSelected: false },
+  { key: 'empresa_ecuador', label: 'EMPRESA ECUADOR', color: '#D7E3F4', textColor: '#1F2A3A', defaultSelected: true },
+  { key: 'empresa_exterior', label: 'EMPRESA EXTERIOR', color: '#FDE0D7', textColor: '#5A2A1D', defaultSelected: false },
+  { key: 'puerto_ecuador', label: 'PUERTO ECUADOR', color: '#DFE4EC', textColor: '#263244', defaultSelected: false },
+  { key: 'puerto_destino', label: 'PUERTO DESTINO', color: '#DCE6F2', textColor: '#23374D', defaultSelected: false },
+  { key: 'pais_destino', label: 'PAÍS DESTINO', color: '#DDECF0', textColor: '#1E444B', defaultSelected: false },
+  { key: 'commodity', label: 'COMMODITY', color: '#F2E7D8', textColor: '#5B4525', defaultSelected: false },
+  { key: 'empresa_transporte', label: 'EMPRESA DE TRANSPORTE', color: '#DDECE2', textColor: '#234230', defaultSelected: false },
+  { key: 'freight_forwarder_destino', label: 'FREIGHT FORWARDER DESTINO', color: '#E8DDF1', textColor: '#4A2E59', defaultSelected: false },
+  { key: 'freight_forwarder_origen', label: 'FREIGHT FORWARDER ORIGEN', color: '#F0E0D8', textColor: '#5C3828', defaultSelected: false },
 ];
 
 const state = {
@@ -39,6 +39,7 @@ const state = {
     empresaEcuador: '',
     empresaTransporte: '',
     forwarderOrigen: '',
+    tipoDespacho: '',
     refrigerada: '',
   },
   selectedFields: FIELD_CONFIG.filter(f => f.defaultSelected).map(f => f.key),
@@ -54,6 +55,7 @@ const dictionaryFiles = {
   empresa_transporte_id: 'empresa_transporte.json',
   freight_forwarder_destino_id: 'freight_forwarder_destino.json',
   freight_forwarder_origen_id: 'freight_forwarder_origen.json',
+  tipo_despacho_id: 'tipo_despacho.json',
 };
 
 const els = {
@@ -78,6 +80,7 @@ const els = {
   filterEmpresaEcuador: document.getElementById('filterEmpresaEcuador'),
   filterEmpresaTransporte: document.getElementById('filterEmpresaTransporte'),
   filterForwarderOrigen: document.getElementById('filterForwarderOrigen'),
+  filterTipoDespacho: document.getElementById('filterTipoDespacho'),
   filterRefrigerada: document.getElementById('filterRefrigerada'),
   resetFiltersBtn: document.getElementById('resetFiltersBtn'),
 };
@@ -144,6 +147,7 @@ async function loadRows() {
           empresa_transporte_id: normalizeId(row.empresa_transporte_id),
           freight_forwarder_destino_id: normalizeId(row.freight_forwarder_destino_id),
           freight_forwarder_origen_id: normalizeId(row.freight_forwarder_origen_id),
+          tipo_despacho_id: normalizeId(row.tipo_despacho_id),
           teus_fcl: Number(row.teus_fcl) || 0,
           cont: Number(row.cont) || 0,
           c20: Number(row.c20) || 0,
@@ -178,6 +182,7 @@ function enrichRows(rows) {
     empresa_transporte: decodeLabel('empresa_transporte_id', row.empresa_transporte_id),
     freight_forwarder_destino: decodeLabel('freight_forwarder_destino_id', row.freight_forwarder_destino_id),
     freight_forwarder_origen: decodeLabel('freight_forwarder_origen_id', row.freight_forwarder_origen_id),
+    tipo_despacho: decodeLabel('tipo_despacho_id', row.tipo_despacho_id),
     mes_label: MONTHS_ES[row.mes] || String(row.mes),
   }));
 }
@@ -266,6 +271,12 @@ function populateFilters() {
     uniqueSorted(rows.map(r => r.freight_forwarder_origen)).map(value => ({ value, label: value })),
     'Todos'
   );
+
+  setOptions(
+    els.filterTipoDespacho,
+    uniqueSorted(rows.map(r => r.tipo_despacho)).map(value => ({ value, label: value })),
+    'Todos'
+  );
 }
 
 function getFilteredRows() {
@@ -279,6 +290,7 @@ function getFilteredRows() {
     if (state.filters.empresaEcuador && row.empresa_ecuador !== state.filters.empresaEcuador) return false;
     if (state.filters.empresaTransporte && row.empresa_transporte !== state.filters.empresaTransporte) return false;
     if (state.filters.forwarderOrigen && row.freight_forwarder_origen !== state.filters.forwarderOrigen) return false;
+    if (state.filters.tipoDespacho && row.tipo_despacho !== state.filters.tipoDespacho) return false;
     if (state.filters.refrigerada === 'si' && !(row.c40rf > 0)) return false;
     if (state.filters.refrigerada === 'no' && !(row.c40rf === 0)) return false;
     return true;
@@ -480,7 +492,7 @@ function renderSelectedFields() {
       class="selected-field-chip"
       draggable="true"
       data-key="${field.key}"
-      style="background:${field.color}"
+      style="background:${field.color}; color:${field.textColor}"
     >
       <span>${field.label}</span>
     </div>
@@ -566,21 +578,24 @@ function renderDetailTable(rows) {
   }
 
   els.detailTableBody.innerHTML = result.map(item => {
-    const detailHtml = item.path.map((value, index) => {
+    const detailLines = item.path.map((value, index) => {
       const fieldKey = state.selectedFields[index];
       const config = FIELD_CONFIG.find(field => field.key === fieldKey);
+
       return `
-        <div class="detail-line">
-          <span class="detail-tag" style="background:${config.color}">${config.label}</span>
-          <span class="detail-value">${value}</span>
+        <div
+          class="detail-line-row"
+          style="background:${config.color}; color:${config.textColor}"
+        >
+          ${value}
         </div>
       `;
     }).join('');
 
     return `
       <tr>
-        <td>
-          <div class="detail-cell">${detailHtml}</div>
+        <td class="detail-data-cell">
+          <div class="detail-row-band">${detailLines}</div>
         </td>
         <td class="num">${formatNumber(item.c20)}</td>
         <td class="num">${formatNumber(item.c40hc)}</td>
@@ -611,6 +626,7 @@ function resetFilters() {
     empresaEcuador: '',
     empresaTransporte: '',
     forwarderOrigen: '',
+    tipoDespacho: '',
     refrigerada: '',
   };
 
@@ -624,6 +640,7 @@ function resetFilters() {
     els.filterEmpresaEcuador,
     els.filterEmpresaTransporte,
     els.filterForwarderOrigen,
+    els.filterTipoDespacho,
     els.filterRefrigerada,
   ].forEach(el => {
     el.value = '';
@@ -675,6 +692,11 @@ function attachEvents() {
 
   els.filterForwarderOrigen.addEventListener('change', e => {
     state.filters.forwarderOrigen = e.target.value;
+    render();
+  });
+
+  els.filterTipoDespacho.addEventListener('change', e => {
+    state.filters.tipoDespacho = e.target.value;
     render();
   });
 
