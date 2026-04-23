@@ -2,7 +2,6 @@
   --bg: #eef1f5;
   --surface: #ffffff;
   --surface-2: #f7f8fb;
-  --surface-3: #eef2f7;
   --text: #232834;
   --muted: #6c7280;
   --line: #d9dee7;
@@ -155,7 +154,10 @@ body { min-height: 100vh; }
   border-color: rgba(252,74,29,.45);
 }
 
-.status { margin: 0; font-weight: 600; }
+.status {
+  margin: 0;
+  font-weight: 600;
+}
 
 .main-content { padding: 26px; }
 
@@ -198,7 +200,7 @@ body { min-height: 100vh; }
 }
 
 .kpi-card {
-  padding: 18px 16px;
+  padding: 18px 14px;
   position: relative;
   overflow: hidden;
   min-height: 118px;
@@ -234,12 +236,15 @@ body { min-height: 100vh; }
 
 .kpi-card strong {
   display: block;
-  font-size: 1.95rem;
-  line-height: 1.05;
+  font-size: 1.2rem;
+  line-height: 1.1;
   color: var(--brand-dark);
   font-weight: 800;
-  letter-spacing: -.02em;
-  word-break: break-word;
+  letter-spacing: -.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-variant-numeric: tabular-nums;
 }
 
 .chart-grid {
@@ -295,7 +300,7 @@ th, td {
   padding: 12px 10px;
   border-bottom: 1px solid var(--line);
   text-align: left;
-  vertical-align: top;
+  vertical-align: middle;
 }
 
 th {
@@ -385,39 +390,29 @@ tr:last-child td { border-bottom: none; }
 .detail-table td.num {
   text-align: right;
   font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
 
-.detail-cell {
+.detail-data-cell {
+  padding: 0;
+}
+
+.detail-row-band {
   display: flex;
   flex-direction: column;
-  gap: 7px;
 }
 
-.detail-line {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  padding-left: 4px;
-}
-
-.detail-tag {
-  min-width: 112px;
-  max-width: 112px;
-  padding: 6px 8px;
-  border-radius: 8px;
-  color: #fff;
-  font-size: .72rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: .04em;
-}
-
-.detail-value {
-  line-height: 1.35;
-  color: var(--text);
+.detail-line-row {
+  padding: 10px 12px;
   font-size: .92rem;
-  padding-top: 3px;
+  line-height: 1.35;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255,255,255,.18);
   word-break: break-word;
+}
+
+.detail-line-row:last-child {
+  border-bottom: none;
 }
 
 .empty-table {
@@ -427,7 +422,7 @@ tr:last-child td { border-bottom: none; }
 }
 
 @media (max-width: 1400px) {
-  .kpi-card strong { font-size: 1.7rem; }
+  .kpi-card strong { font-size: 1.05rem; }
 }
 
 @media (max-width: 1200px) {
@@ -452,8 +447,7 @@ tr:last-child td { border-bottom: none; }
   }
   .topbar { flex-direction: column; }
   .brand-logo { max-width: 180px; }
-  .detail-tag {
-    min-width: 88px;
-    max-width: 88px;
+  .kpi-card strong {
+    font-size: 1.1rem;
   }
 }
