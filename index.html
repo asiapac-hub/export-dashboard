@@ -61,6 +61,10 @@
           <select id="filterEmpresaEcuador"></select>
         </label>
 
+        <label>Empresa de Transporte
+          <select id="filterEmpresaTransporte"></select>
+        </label>
+
         <label>Forwarder origen
           <select id="filterForwarderOrigen"></select>
         </label>
@@ -101,13 +105,13 @@
         </article>
 
         <article class="kpi-card">
-          <span class="kpi-label">20'</span>
+          <span class="kpi-label">20GP</span>
           <strong id="kpi20">-</strong>
         </article>
 
         <article class="kpi-card">
-          <span class="kpi-label">40'</span>
-          <strong id="kpi40">-</strong>
+          <span class="kpi-label">40HC</span>
+          <strong id="kpi40HC">-</strong>
         </article>
 
         <article class="kpi-card">
@@ -162,25 +166,38 @@
         </article>
       </section>
 
-      <section class="chart-grid">
-        <article class="panel">
-          <div class="panel-head">
-            <h3>Top empresas Ecuador</h3>
-            <span class="panel-note">Top 15 por TEUs</span>
+      <section class="panel table-panel">
+        <div class="panel-head panel-head-stack">
+          <div>
+            <h3>Detalle agrupado</h3>
+            <span class="panel-note">Máximo 100 resultados</span>
           </div>
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Empresa</th>
-                  <th>TEUs</th>
-                </tr>
-              </thead>
-              <tbody id="topEmpresasBody"></tbody>
-            </table>
+
+          <div class="field-builder-wrap">
+            <div class="field-builder-title">Datos</div>
+            <div id="fieldPicker" class="field-picker"></div>
+            <div class="selected-fields-wrap">
+              <div class="selected-fields-title">Orden de campos</div>
+              <div id="selectedFieldsList" class="selected-fields-list"></div>
+              <p class="selected-fields-help">Arrastra para reordenar</p>
+            </div>
           </div>
-        </article>
+        </div>
+
+        <div class="table-wrap">
+          <table class="detail-table">
+            <thead>
+              <tr>
+                <th style="width:52%">DATOS</th>
+                <th>20GP</th>
+                <th>40HC</th>
+                <th>40RF</th>
+                <th>TEUS</th>
+              </tr>
+            </thead>
+            <tbody id="detailTableBody"></tbody>
+          </table>
+        </div>
       </section>
     </main>
   </div>
