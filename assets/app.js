@@ -13,6 +13,18 @@ const MONTHS_ES = {
   12: 'Diciembre',
 };
 
+const FIELD_CONFIG = [
+  { key: 'empresa_ecuador', label: 'EMPRESA ECUADOR', color: '#393E4D', defaultSelected: true },
+  { key: 'empresa_exterior', label: 'EMPRESA EXTERIOR', color: '#FC4A1D', defaultSelected: false },
+  { key: 'puerto_ecuador', label: 'PUERTO ECUADOR', color: '#585D6C', defaultSelected: false },
+  { key: 'puerto_destino', label: 'PUERTO DESTINO', color: '#6C7488', defaultSelected: false },
+  { key: 'pais_destino', label: 'PAÍS DESTINO', color: '#2F5D7C', defaultSelected: false },
+  { key: 'commodity', label: 'COMMODITY', color: '#8D5A2B', defaultSelected: false },
+  { key: 'empresa_transporte', label: 'EMPRESA DE TRANSPORTE', color: '#4E7B5C', defaultSelected: false },
+  { key: 'freight_forwarder_destino', label: 'FREIGHT FORWARDER DESTINO', color: '#7C4D79', defaultSelected: false },
+  { key: 'freight_forwarder_origen', label: 'FREIGHT FORWARDER ORIGEN', color: '#A0573A', defaultSelected: false },
+];
+
 const state = {
   rows: [],
   dictionaries: {},
@@ -25,28 +37,35 @@ const state = {
     puertoDestino: '',
     puertoEcuador: '',
     empresaEcuador: '',
+    empresaTransporte: '',
     forwarderOrigen: '',
     refrigerada: '',
-  }
+  },
+  selectedFields: FIELD_CONFIG.filter(f => f.defaultSelected).map(f => f.key),
 };
 
 const dictionaryFiles = {
   empresa_ecuador_id: 'empresa_ecuador.json',
+  empresa_exterior_id: 'empresa_exterior.json',
   pais_destino_id: 'pais_destino.json',
   commodity_id: 'commodity.json',
   puerto_destino_id: 'puerto_destino.json',
   puerto_ecuador_id: 'puerto_ecuador.json',
+  empresa_transporte_id: 'empresa_transporte.json',
+  freight_forwarder_destino_id: 'freight_forwarder_destino.json',
   freight_forwarder_origen_id: 'freight_forwarder_origen.json',
 };
 
 const els = {
   loadingStatus: document.getElementById('loadingStatus'),
   activeFiltersLabel: document.getElementById('activeFiltersLabel'),
-  topEmpresasBody: document.getElementById('topEmpresasBody'),
+  detailTableBody: document.getElementById('detailTableBody'),
+  fieldPicker: document.getElementById('fieldPicker'),
+  selectedFieldsList: document.getElementById('selectedFieldsList'),
   kpiTeus: document.getElementById('kpiTeus'),
   kpiCont: document.getElementById('kpiCont'),
   kpi20: document.getElementById('kpi20'),
-  kpi40: document.getElementById('kpi40'),
+  kpi40HC: document.getElementById('kpi40HC'),
   kpi40RF: document.getElementById('kpi40RF'),
   kpiEmpresas: document.getElementById('kpiEmpresas'),
   kpiPaises: document.getElementById('kpiPaises'),
@@ -57,6 +76,7 @@ const els = {
   filterPuertoDestino: document.getElementById('filterPuertoDestino'),
   filterPuertoEcuador: document.getElementById('filterPuertoEcuador'),
   filterEmpresaEcuador: document.getElementById('filterEmpresaEcuador'),
+  filterEmpresaTransporte: document.getElementById('filterEmpresaTransporte'),
   filterForwarderOrigen: document.getElementById('filterForwarderOrigen'),
   filterRefrigerada: document.getElementById('filterRefrigerada'),
   resetFiltersBtn: document.getElementById('resetFiltersBtn'),
@@ -116,17 +136,24 @@ async function loadRows() {
           mes: Number(row.mes) || 0,
           periodo: row.periodo,
           empresa_ecuador_id: normalizeId(row.empresa_ecuador_id),
+          empresa_exterior_id: normalizeId(row.empresa_exterior_id),
+          puerto_ecuador_id: normalizeId(row.puerto_ecuador_id),
+          puerto_destino_id: normalizeId(row.puerto_destino_id),
           pais_destino_id: normalizeId(row.pais_destino_id),
           commodity_id: normalizeId(row.commodity_id),
-          puerto_destino_id: normalizeId(row.puerto_destino_id),
-          puerto_ecuador_id: normalizeId(row.puerto_ecuador_id),
+          empresa_transporte_id: normalizeId(row.empresa_transporte_id),
+          freight_forwarder_destino_id: normalizeId(row.freight_forwarder_destino_id),
           freight_forwarder_origen_id: normalizeId(row.freight_forwarder_origen_id),
           teus_fcl: Number(row.teus_fcl) || 0,
           cont: Number(row.cont) || 0,
           c20: Number(row.c20) || 0,
-          c40: Number(row.c40) || 0,
+          c40_total: Number(row.c40) || 0,
           c40rf: Number(row['40_ft_temp_cont']) || 0,
         })).filter(row => row.anio > 0 && row.mes > 0);
+
+        rows.forEach(row => {
+          row.c40hc = Math.max(0, row.c40_total - row.c40rf);
+        });
 
         resolve(rows);
       },
@@ -143,10 +170,13 @@ function enrichRows(rows) {
   return rows.map(row => ({
     ...row,
     empresa_ecuador: decodeLabel('empresa_ecuador_id', row.empresa_ecuador_id),
+    empresa_exterior: decodeLabel('empresa_exterior_id', row.empresa_exterior_id),
     pais_destino: decodeLabel('pais_destino_id', row.pais_destino_id),
     commodity: decodeLabel('commodity_id', row.commodity_id),
     puerto_destino: decodeLabel('puerto_destino_id', row.puerto_destino_id),
     puerto_ecuador: decodeLabel('puerto_ecuador_id', row.puerto_ecuador_id),
+    empresa_transporte: decodeLabel('empresa_transporte_id', row.empresa_transporte_id),
+    freight_forwarder_destino: decodeLabel('freight_forwarder_destino_id', row.freight_forwarder_destino_id),
     freight_forwarder_origen: decodeLabel('freight_forwarder_origen_id', row.freight_forwarder_origen_id),
     mes_label: MONTHS_ES[row.mes] || String(row.mes),
   }));
@@ -221,7 +251,13 @@ function populateFilters() {
 
   setOptions(
     els.filterEmpresaEcuador,
-    uniqueSorted(rows.map(r => r.empresa_ecuador)).slice(0, 4000).map(value => ({ value, label: value })),
+    uniqueSorted(rows.map(r => r.empresa_ecuador)).map(value => ({ value, label: value })),
+    'Todos'
+  );
+
+  setOptions(
+    els.filterEmpresaTransporte,
+    uniqueSorted(rows.map(r => r.empresa_transporte)).map(value => ({ value, label: value })),
     'Todos'
   );
 
@@ -241,11 +277,10 @@ function getFilteredRows() {
     if (state.filters.puertoDestino && row.puerto_destino !== state.filters.puertoDestino) return false;
     if (state.filters.puertoEcuador && row.puerto_ecuador !== state.filters.puertoEcuador) return false;
     if (state.filters.empresaEcuador && row.empresa_ecuador !== state.filters.empresaEcuador) return false;
+    if (state.filters.empresaTransporte && row.empresa_transporte !== state.filters.empresaTransporte) return false;
     if (state.filters.forwarderOrigen && row.freight_forwarder_origen !== state.filters.forwarderOrigen) return false;
-
     if (state.filters.refrigerada === 'si' && !(row.c40rf > 0)) return false;
     if (state.filters.refrigerada === 'no' && !(row.c40rf === 0)) return false;
-
     return true;
   });
 }
@@ -254,29 +289,18 @@ function updateKPIs(rows) {
   const teus = rows.reduce((sum, row) => sum + row.teus_fcl, 0);
   const cont = rows.reduce((sum, row) => sum + row.cont, 0);
   const c20 = rows.reduce((sum, row) => sum + row.c20, 0);
-  const c40 = rows.reduce((sum, row) => sum + row.c40, 0);
   const c40rf = rows.reduce((sum, row) => sum + row.c40rf, 0);
+  const c40hc = rows.reduce((sum, row) => sum + row.c40hc, 0);
   const empresas = new Set(rows.map(r => r.empresa_ecuador).filter(Boolean)).size;
   const paises = new Set(rows.map(r => r.pais_destino).filter(Boolean)).size;
 
   els.kpiTeus.textContent = formatNumber(teus);
   els.kpiCont.textContent = formatNumber(cont);
   els.kpi20.textContent = formatNumber(c20);
-  els.kpi40.textContent = formatNumber(c40);
+  els.kpi40HC.textContent = formatNumber(c40hc);
   els.kpi40RF.textContent = formatNumber(c40rf);
   els.kpiEmpresas.textContent = formatNumber(empresas);
   els.kpiPaises.textContent = formatNumber(paises);
-}
-
-function updateTopTable(rows) {
-  const top = groupSum(rows, 'empresa_ecuador', 'teus_fcl', 15);
-  els.topEmpresasBody.innerHTML = top.map((item, index) => `
-    <tr>
-      <td>${index + 1}</td>
-      <td>${item.label}</td>
-      <td>${formatNumber(item.value)}</td>
-    </tr>
-  `).join('');
 }
 
 function buildSeries(rows) {
@@ -398,10 +422,8 @@ function updateCharts(rows) {
 
 function getFilterLabel(key, value) {
   if (!value) return '';
-
   if (key === 'mes') return MONTHS_ES[Number(value)] || value;
   if (key === 'refrigerada') return value === 'si' ? 'Carga refrigerada: Sí' : 'Carga refrigerada: No';
-
   return value;
 }
 
@@ -416,11 +438,164 @@ function updateActiveFiltersLabel() {
   els.activeFiltersLabel.textContent = tags.length ? tags.join(' • ') : 'Sin filtros';
 }
 
+function renderFieldPicker() {
+  els.fieldPicker.innerHTML = FIELD_CONFIG.map(field => `
+    <label class="field-item">
+      <input
+        type="checkbox"
+        value="${field.key}"
+        ${state.selectedFields.includes(field.key) ? 'checked' : ''}
+      />
+      <span>${field.label}</span>
+    </label>
+  `).join('');
+
+  els.fieldPicker.querySelectorAll('input[type="checkbox"]').forEach(input => {
+    input.addEventListener('change', event => {
+      const key = event.target.value;
+
+      if (event.target.checked) {
+        if (!state.selectedFields.includes(key)) state.selectedFields.push(key);
+      } else {
+        state.selectedFields = state.selectedFields.filter(item => item !== key);
+        if (state.selectedFields.length === 0) {
+          state.selectedFields = ['empresa_ecuador'];
+          renderFieldPicker();
+        }
+      }
+
+      renderSelectedFields();
+      render();
+    });
+  });
+}
+
+function renderSelectedFields() {
+  const selectedConfigs = state.selectedFields
+    .map(key => FIELD_CONFIG.find(field => field.key === key))
+    .filter(Boolean);
+
+  els.selectedFieldsList.innerHTML = selectedConfigs.map(field => `
+    <div
+      class="selected-field-chip"
+      draggable="true"
+      data-key="${field.key}"
+      style="background:${field.color}"
+    >
+      <span>${field.label}</span>
+    </div>
+  `).join('');
+
+  let dragKey = null;
+
+  els.selectedFieldsList.querySelectorAll('.selected-field-chip').forEach(chip => {
+    chip.addEventListener('dragstart', event => {
+      dragKey = chip.dataset.key;
+      chip.classList.add('dragging');
+      event.dataTransfer.effectAllowed = 'move';
+    });
+
+    chip.addEventListener('dragend', () => {
+      chip.classList.remove('dragging');
+    });
+
+    chip.addEventListener('dragover', event => {
+      event.preventDefault();
+      event.dataTransfer.dropEffect = 'move';
+    });
+
+    chip.addEventListener('drop', event => {
+      event.preventDefault();
+      const targetKey = chip.dataset.key;
+      if (!dragKey || dragKey === targetKey) return;
+
+      const current = [...state.selectedFields];
+      const fromIndex = current.indexOf(dragKey);
+      const toIndex = current.indexOf(targetKey);
+
+      current.splice(fromIndex, 1);
+      current.splice(toIndex, 0, dragKey);
+      state.selectedFields = current;
+
+      renderSelectedFields();
+      render();
+    });
+  });
+}
+
+function buildDetailRows(rows) {
+  const selectedFields = state.selectedFields.length ? state.selectedFields : ['empresa_ecuador'];
+  const map = new Map();
+
+  rows.forEach(row => {
+    const path = selectedFields.map(key => row[key] || 'Sin dato');
+    const pathKey = path.join('|||');
+
+    if (!map.has(pathKey)) {
+      map.set(pathKey, {
+        path,
+        c20: 0,
+        c40hc: 0,
+        c40rf: 0,
+        teus: 0,
+      });
+    }
+
+    const bucket = map.get(pathKey);
+    bucket.c20 += row.c20;
+    bucket.c40hc += row.c40hc;
+    bucket.c40rf += row.c40rf;
+    bucket.teus += row.teus_fcl;
+  });
+
+  return [...map.values()]
+    .sort((a, b) => b.teus - a.teus)
+    .slice(0, 100);
+}
+
+function renderDetailTable(rows) {
+  const result = buildDetailRows(rows);
+
+  if (!result.length) {
+    els.detailTableBody.innerHTML = `
+      <tr>
+        <td colspan="5" class="empty-table">No hay resultados para los filtros actuales.</td>
+      </tr>
+    `;
+    return;
+  }
+
+  els.detailTableBody.innerHTML = result.map(item => {
+    const detailHtml = item.path.map((value, index) => {
+      const fieldKey = state.selectedFields[index];
+      const config = FIELD_CONFIG.find(field => field.key === fieldKey);
+      return `
+        <div class="detail-line">
+          <span class="detail-tag" style="background:${config.color}">${config.label}</span>
+          <span class="detail-value">${value}</span>
+        </div>
+      `;
+    }).join('');
+
+    return `
+      <tr>
+        <td>
+          <div class="detail-cell">${detailHtml}</div>
+        </td>
+        <td class="num">${formatNumber(item.c20)}</td>
+        <td class="num">${formatNumber(item.c40hc)}</td>
+        <td class="num">${formatNumber(item.c40rf)}</td>
+        <td class="num">${formatNumber(item.teus)}</td>
+      </tr>
+    `;
+  }).join('');
+}
+
 function render() {
   const filteredRows = getFilteredRows();
   updateKPIs(filteredRows);
   updateCharts(filteredRows);
-  updateTopTable(filteredRows);
+  renderDetailTable(filteredRows);
   updateActiveFiltersLabel();
   els.loadingStatus.textContent = `Datos listos, ${formatNumber(filteredRows.length)} filas activas`;
 }
@@ -434,6 +609,7 @@ function resetFilters() {
     puertoDestino: '',
     puertoEcuador: '',
     empresaEcuador: '',
+    empresaTransporte: '',
     forwarderOrigen: '',
     refrigerada: '',
   };
@@ -446,6 +622,7 @@ function resetFilters() {
     els.filterPuertoDestino,
     els.filterPuertoEcuador,
     els.filterEmpresaEcuador,
+    els.filterEmpresaTransporte,
     els.filterForwarderOrigen,
     els.filterRefrigerada,
   ].forEach(el => {
@@ -491,6 +668,11 @@ function attachEvents() {
     render();
   });
 
+  els.filterEmpresaTransporte.addEventListener('change', e => {
+    state.filters.empresaTransporte = e.target.value;
+    render();
+  });
+
   els.filterForwarderOrigen.addEventListener('change', e => {
     state.filters.forwarderOrigen = e.target.value;
     render();
@@ -515,6 +697,8 @@ async function init() {
     state.rows = enrichRows(rows);
     populateFilters();
     attachEvents();
+    renderFieldPicker();
+    renderSelectedFields();
     render();
   } catch (error) {
     console.error(error);
