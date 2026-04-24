@@ -83,6 +83,9 @@ const els = {
   filterTipoDespacho: document.getElementById('filterTipoDespacho'),
   filterRefrigerada: document.getElementById('filterRefrigerada'),
   resetFiltersBtn: document.getElementById('resetFiltersBtn'),
+  appShell: document.querySelector('.app-shell'),
+toggleSidebarBtn: document.getElementById('toggleSidebarBtn'),
+showSidebarBtn: document.getElementById('showSidebarBtn'),
 };
 
 function formatNumber(value, decimals = 0) {
@@ -537,32 +540,61 @@ function renderSelectedFields() {
 
 function buildDetailRows(rows) {
   const selectedFields = state.selectedFields.length ? state.selectedFields : ['empresa_ecuador'];
-  const map = new Map();
+  const output = [];
 
-  rows.forEach(row => {
-    const path = selectedFields.map(key => row[key] || 'Sin dato');
-    const pathKey = path.join('|||');
+  function buildLevel(sourceRows, level, parentKey = '') {
+    if (level >= selectedFields.length) return;
 
-    if (!map.has(pathKey)) {
-      map.set(pathKey, {
-        path,
-        c20: 0,
-        c40hc: 0,
-        c40rf: 0,
-        teus: 0,
+    const fieldKey = selectedFields[level];
+    const map = new Map();
+
+    sourceRows.forEach(row => {
+      const value = row[fieldKey] || 'Sin dato';
+      const key = `${parentKey}|||${fieldKey}|||${value}`;
+
+      if (!map.has(key)) {
+        map.set(key, {
+          fieldKey,
+          value,
+          level,
+          rows: [],
+          c20: 0,
+          c40hc: 0,
+          c40rf: 0,
+          teus: 0,
+        });
+      }
+
+      const bucket = map.get(key);
+      bucket.rows.push(row);
+      bucket.c20 += row.c20;
+      bucket.c40hc += row.c40hc;
+      bucket.c40rf += row.c40rf;
+      bucket.teus += row.teus_fcl;
+    });
+
+    const grouped = [...map.values()].sort((a, b) => b.teus - a.teus);
+
+    grouped.forEach(item => {
+      if (output.length >= 100) return;
+
+      output.push({
+        fieldKey: item.fieldKey,
+        value: item.value,
+        level: item.level,
+        c20: item.c20,
+        c40hc: item.c40hc,
+        c40rf: item.c40rf,
+        teus: item.teus,
       });
-    }
 
-    const bucket = map.get(pathKey);
-    bucket.c20 += row.c20;
-    bucket.c40hc += row.c40hc;
-    bucket.c40rf += row.c40rf;
-    bucket.teus += row.teus_fcl;
-  });
+      buildLevel(item.rows, level + 1, `${parentKey}|||${item.value}`);
+    });
+  }
 
-  return [...map.values()]
-    .sort((a, b) => b.teus - a.teus)
-    .slice(0, 100);
+  buildLevel(rows, 0);
+
+  return output.slice(0, 100);
 }
 
 function renderDetailTable(rows) {
@@ -578,24 +610,16 @@ function renderDetailTable(rows) {
   }
 
   els.detailTableBody.innerHTML = result.map(item => {
-    const detailLines = item.path.map((value, index) => {
-      const fieldKey = state.selectedFields[index];
-      const config = FIELD_CONFIG.find(field => field.key === fieldKey);
-
-      return `
-        <div
-          class="detail-line-row"
-          style="background:${config.color}; color:${config.textColor}"
-        >
-          ${value}
-        </div>
-      `;
-    }).join('');
+    const config = FIELD_CONFIG.find(field => field.key === item.fieldKey);
 
     return `
       <tr>
-        <td class="detail-data-cell">
-          <div class="detail-row-band">${detailLines}</div>
+        <td>
+          <div class="detail-data-label" style="--level:${item.level}">
+            <span class="detail-indent"></span>
+            <span class="detail-color-ref" style="background:${config.color}"></span>
+            <span class="detail-value-text">${item.value}</span>
+          </div>
         </td>
         <td class="num">${formatNumber(item.c20)}</td>
         <td class="num">${formatNumber(item.c40hc)}</td>
@@ -706,6 +730,13 @@ function attachEvents() {
   });
 
   els.resetFiltersBtn.addEventListener('click', resetFilters);
+  els.toggleSidebarBtn.addEventListener('click', () => {
+  els.appShell.classList.add('sidebar-collapsed');
+});
+
+els.showSidebarBtn.addEventListener('click', () => {
+  els.appShell.classList.remove('sidebar-collapsed');
+});
 }
 
 async function init() {
